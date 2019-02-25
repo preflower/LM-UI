@@ -1,4 +1,4 @@
-# lm-ui
+# LM-UI
 
 > A UI Components base on Vue
 
@@ -18,9 +18,6 @@ npm run build
 npm run build --report
 
 # run unit tests
-npm run unit
-
-# run all tests
 npm test
 ```
 
