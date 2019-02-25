@@ -1,17 +1,14 @@
 <template>
   <div id="app">
     Welcome to use LM-UI
-    <l-button></l-button>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import LButton from '@/Template/index.vue';
 
 @Component({
   components: {
-    LButton,
   }
 })
 export default class App extends Vue {}
