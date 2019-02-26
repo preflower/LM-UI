@@ -1,4 +1,5 @@
 'use strict'
+const os = require('os')
 const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
@@ -14,6 +15,22 @@ const portfinder = require('portfinder')
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
+const IP = getIP()
+
+function getIP (ifaces = os.networkInterfaces(), defaultIP = process.env.HOST) {
+  let IP = defaultIP
+  Object.values(ifaces).some(ifList => {
+    return ifList.some(iface => {
+      // skip non-ip4 && 127.0.0.1
+      if (iface.family !== 'IPv4' || iface.internal !== false) {
+        return false
+      }
+      IP = iface.address
+      return true
+    })
+  })
+  return IP
+}
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   mode: 'development',
@@ -86,7 +103,11 @@ module.exports = new Promise((resolve, reject) => {
       // Add FriendlyErrorsPlugin
       devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
-          messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
+          messages: [
+            `App running at:`,
+            `- local: http://localhost:${port}`,
+            `- network: http://${IP}:${port}`
+          ]
         },
         onErrors: config.dev.notifyOnErrors
         ? utils.createNotifierCallback()
