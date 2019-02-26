@@ -28,7 +28,7 @@ export default class LmSwitch extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import '@/common/style/variable.scss';
+@import 'common/style/variable.scss';
 
 .lm-switch {
   display: inline-block;
