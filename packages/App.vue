@@ -9,7 +9,6 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import LmSwitch from './switch/switch.vue'
-// import LmSwitch from './switch/index.js'
 
 @Component({
   components: {
