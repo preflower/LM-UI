@@ -1,17 +1,29 @@
 <template>
   <div id="app">
     Welcome to use LM-UI
+    <p><br></p>
+    <lm-switch class="switch" v-model="v" @change="log" :disabled="disabled"></lm-switch>Hi Guys
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import LmSwitch from './switch/switch.vue'
+// import LmSwitch from './switch/index.js'
 
 @Component({
   components: {
+    LmSwitch
   }
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  disabled: boolean = false
+  v: boolean = false
+
+  log (val: boolean): void {
+    console.log(val)
+  }
+}
 </script>
 
 <style>
@@ -22,5 +34,10 @@ export default class App extends Vue {}
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.switch {
+  vertical-align: middle;
+  margin-right: 5px;
 }
 </style>
