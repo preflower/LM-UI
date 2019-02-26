@@ -27,7 +27,7 @@
 
 <script lang='ts'>
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import LmButton from '@/button/main.vue';
+import LmButton from '@/button/button.vue';
 
 @Component({
   components: {
