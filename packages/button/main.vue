@@ -54,6 +54,7 @@ export default class Button extends Vue {
 }
 
 .lm-btn {
+  position: relative;
   padding: 8px 16px;
   font-size: 16px;
   cursor: pointer;
@@ -68,20 +69,33 @@ export default class Button extends Vue {
     width: 100%;
     padding: 12px 16px;
   }
+  &--primary {
+    @include btn-color($blue);
+  }
+  &--danger {
+    @include btn-color($red);
+  }
+  &--warn {
+    @include btn-color($orange);
+  }
+  &--dark {
+    @include btn-color($dark);
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: $dark-light;
+  }
+  &:active::before {
+    opacity: .2;
+  }
   + .lm-btn {
     margin-top: 10px;
   }
-}
-.lm-btn--primary {
-  @include btn-color($blue);
-}
-.lm-btn--danger {
-  @include btn-color($red);
-}
-.lm-btn--warn {
-  @include btn-color($orange);
-}
-.lm-btn--dark {
-  @include btn-color($dark);
 }
 </style>
