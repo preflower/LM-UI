@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     Welcome to use LM-UI
-    <lm-button type="primary">Primary</lm-button>
     <p><br></p>
+    <lm-button type="primary">Primary</lm-button>
     <lm-switch></lm-switch>
   </div>
 </template>
@@ -14,14 +14,11 @@ import LmSwitch from '@/switch/switch.vue';
 
 @Component({
   components: {
-    LmButton, LmSwitch
+    LmButton,
+    LmSwitch
   }
 })
-export default class App extends Vue {
-  handle_click (event: object) {
-    console.log(event);
-  }
-}
+export default class App extends Vue {}
 </script>
 
 <style>
@@ -32,10 +29,5 @@ export default class App extends Vue {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-
-.switch {
-  vertical-align: middle;
-  margin-right: 5px;
 }
 </style>

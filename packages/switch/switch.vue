@@ -9,8 +9,7 @@
 import { Vue, Prop, Component } from 'vue-property-decorator';
 
 @Component
-export default class LmSwitch extends Vue {
-
+export default class Switch extends Vue {
   name: string = 'lm-switch'
 
   @Prop({ default: false }) value!: boolean
@@ -23,12 +22,14 @@ export default class LmSwitch extends Vue {
   set selected (val) {
     this.$emit('input', val)
   }
-
 }
 </script>
 
 <style lang="scss" scoped>
-@import '@/common/style/variable.scss';
+@import 'common/style/variable.scss';
+
+$switch-width: 50px;
+$switch-height: 30px;
 
 .lm-switch {
   display: inline-block;
@@ -41,10 +42,9 @@ export default class LmSwitch extends Vue {
   &-core {
     position: relative;
     display: inline-block;
-    width: 52px;
-    height: 32px;
-    border-radius: 16px;
-    box-sizing: border-box;
+    width: $switch-width;
+    height: $switch-height;
+    border-radius: $switch-height;
     border: 1px solid;
     border-color: $gray-light;
     background: $gray-light;
@@ -55,16 +55,15 @@ export default class LmSwitch extends Vue {
       left: 0;
       transition: transform .3s;
       background: $white;
+      border-radius: $switch-height;
     }
     &::before {
-      width: 50px;
-      height: 30px;
-      border-radius: 15px;
+      width: 100%;
+      height: 100%;
     }
     &::after {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
+      width: $switch-height;
+      height: $switch-height;
       box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
     }
   }
@@ -79,7 +78,7 @@ export default class LmSwitch extends Vue {
           transform: scale(0);
         }
         &::after {
-          transform: translateX(20px);
+          transform: translateX($switch-width - $switch-height);
         }
       }
     }
