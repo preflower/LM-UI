@@ -1,25 +1,34 @@
 <template>
   <div id="app">
     Welcome to use LM-UI
-    <lm-button type="primary">Primary</lm-button>
+    <lm-button @click="handle_click">Primary</lm-button>
+    <lm-button @click="create_new_toast">Create New Toast</lm-button>
     <p><br></p>
     <lm-switch></lm-switch>
+    <p><br></p>
+    <!-- <lm-loading></lm-loading> -->
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+
 import LmButton from '@/button/button.vue';
 import LmSwitch from '@/switch/switch.vue';
+import LmLoading from '@/loading/loading.vue';
 
 @Component({
   components: {
-    LmButton, LmSwitch
+    LmButton, LmSwitch, LmLoading
   }
 })
 export default class App extends Vue {
-  handle_click (event: object) {
-    console.log(event);
+  handle_click (event: Event) {
+    console.log(this.$toast({ message: 'ceshi', duration: 0 }));
+  }
+
+  create_new_toast (event: Event) {
+    this.$toast.loading({ duration: 0, mask: true });
   }
 }
 </script>

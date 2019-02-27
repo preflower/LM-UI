@@ -10,3 +10,11 @@
 #### 优化
 - 新增 Button 组件 (@Lindberg)
 - 新增 Switch 组件 (@Mayfly)
+
+### release/0.0.2
+2019-02-27
+
+#### 优化
+- 新增 Loading 组件 (@Lindberg)
+- 新增 Toast 组件 (@Lindberg)
+- 新增 Button 组件 UT (@Lindberg)
