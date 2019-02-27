@@ -98,7 +98,11 @@
       "^.+\\.js$": "babel-jest"
     },
     "testURL": "http://localhost/"
-  },
+  }, 
+  "files": [
+    "index.js",
+    "*.d.ts"
+  ],
   "engines": {
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
