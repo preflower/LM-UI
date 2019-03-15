@@ -35,5 +35,5 @@
 - 新增 Range 组件 (@Lindberg)
   - min => 设定范围最小值
   - max => 设定范围最大值
-  - step => 设定每次移动的最小步长
+  - step => 设定每次移动的最小步长
   - disabled => 是否禁用 Range
