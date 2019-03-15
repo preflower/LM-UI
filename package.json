@@ -12,6 +12,7 @@
     "check": "jscpd packages"
   },
   "dependencies": {
+    "hammerjs": "^2.0.8",
     "vue": "^2.6.7",
     "vue-property-decorator": "^7.3.0"
   },
@@ -90,7 +91,8 @@
       "vue"
     ],
     "moduleNameMapper": {
-      "^@/(.*)$": "<rootDir>/packages/$1"
+      "^@/(.*)$": "<rootDir>/packages/$1",
+      "^common/(.*)$": "<rootDir>/common/$1"
     },
     "transform": {
       ".*\\.(vue)$": "vue-jest",
@@ -98,7 +100,7 @@
       "^.+\\.js$": "babel-jest"
     },
     "testURL": "http://localhost/"
-  }, 
+  },
   "files": [
     "index.js",
     "*.d.ts"

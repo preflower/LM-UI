@@ -63,6 +63,7 @@ export default {
   transform: translateX(-50%);
   color: $white;
   font-size: 16px;
+  font-weight: 100;
   z-index: 99;
   &__mask {
     position: absolute;

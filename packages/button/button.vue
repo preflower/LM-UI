@@ -41,8 +41,7 @@ export default class Button extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import 'common/style/init.scss';
-@import 'common/style/variable.scss';
+@import 'common/style/init.scss', 'common/style/variable.scss';
 @mixin btn-color($color, $second_color: #ffffff) {
   color: $second_color;
   background: $color;
