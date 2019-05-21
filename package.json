@@ -9,8 +9,7 @@
     "start": "npm run dev",
     "test": "jest",
     "build": "node build/build.js",
-    "check": "jscpd packages",
-    "precommit": "lint-staged"
+    "check": "jscpd packages"
   },
   "husky": {
     "hooks": {
