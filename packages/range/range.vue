@@ -85,11 +85,11 @@ export default class Range extends Mixins(TouchMixin) {
 .range {
   &__wrap {
     position: relative;
-    padding: 15px 0;
-    margin: 0 15px;
     height: 2px;
-    background: $gray content-box;
+    padding: 15px 0;
     border-radius: 12px;
+    margin: 0 15px;
+    background: $gray content-box;
 
     &--disabled {
       opacity: 0.3;
@@ -108,18 +108,18 @@ export default class Range extends Mixins(TouchMixin) {
     position: absolute;
     width: 30px;
     height: 30px;
-    transform: translate3d(-50%, -50%, 0);
     border-radius: 50%;
     background: $white;
     box-shadow: 0 1px 4px 2px $gray;
+    transform: translate3d(-50%, -50%, 0);
 
     &::before {
-      content: '';
       position: absolute;
-      width: 150%;
-      height: 150%;
       top: -25%;
       left: -25%;
+      width: 150%;
+      height: 150%;
+      content: '';
     }
   }
 }

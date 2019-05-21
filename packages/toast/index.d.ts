@@ -5,7 +5,7 @@ export type MessageType = 'text' | 'loading'
 
 /** Notification Component */
 export declare class LMToastComponent extends Vue {
-  clear (): void
+  clear(): void
 }
 
 export interface LMToastOptions {
@@ -20,9 +20,9 @@ export interface LMToastOptions {
 export interface LMToast {
   (options: LMToastOptions | string): LMToastComponent
 
-  loading (options: LMToastOptions): LMToastComponent
+  loading(options: LMToastOptions): LMToastComponent
 
-  install (vue: typeof Vue): void
+  install(vue: typeof Vue): void
 }
 
 declare module 'vue/types/vue' {
@@ -31,5 +31,5 @@ declare module 'vue/types/vue' {
   }
 }
 
-declare const Toast: LMToast;
-export default Toast;
+declare const Toast: LMToast
+export default Toast

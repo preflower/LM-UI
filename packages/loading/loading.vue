@@ -24,32 +24,32 @@ export default class Loading extends Vue {}
 
   &__ring {
     position: absolute;
-    border-radius: 50%;
     border: 3px solid transparent;
+    border-radius: 50%;
     animation: semipolar-spinner-animation 2s infinite;
 
     &:nth-child(1) {
-      z-index: 3;
       width: 32px;
       height: 32px;
       animation-delay: 600ms;
+      z-index: 3;
     }
 
     &:nth-child(2) {
       top: 5px;
       left: 5px;
-      z-index: 2;
       width: 22px;
       height: 22px;
       animation-delay: 200ms;
+      z-index: 2;
     }
 
     &:nth-child(3) {
       top: 10px;
       left: 10px;
-      z-index: 1;
       width: 12px;
       height: 12px;
+      z-index: 1;
     }
   }
 

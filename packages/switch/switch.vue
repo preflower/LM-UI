@@ -32,10 +32,10 @@ export default class Switch extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import 'common/style/variable.scss';
-
 $switch-width: 50px;
 $switch-height: 30px;
+
+@import 'common/style/variable.scss';
 
 .lm-switch {
   display: inline-block;
@@ -51,20 +51,20 @@ $switch-height: 30px;
     display: inline-block;
     width: $switch-width;
     height: $switch-height;
-    border-radius: $switch-height;
     border: 1px solid;
     border-color: $gray-light;
+    border-radius: $switch-height;
     background: $gray-light;
 
     &::before,
     &::after {
-      content: '';
       position: absolute;
       top: 0;
       left: 0;
-      transition: transform 0.3s;
-      background: $white;
       border-radius: $switch-height;
+      background: $white;
+      transition: transform 0.3s;
+      content: '';
     }
 
     &::before {
@@ -108,8 +108,8 @@ $switch-height: 30px;
 
     &:checked:disabled {
       + .lm-switch-core {
-        background: $blue-light;
         border-color: $blue-light;
+        background: $blue-light;
         opacity: 0.3;
       }
     }

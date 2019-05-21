@@ -50,9 +50,9 @@ export default {
 .mask {
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   background-color: $dark-light;
   opacity: 0.3;
   z-index: 98;
@@ -61,21 +61,21 @@ export default {
 .toast-container {
   position: fixed;
   left: 50%;
-  transform: translateX(-50%);
   color: $white;
-  font-size: 16px;
   font-weight: 100;
+  font-size: 16px;
+  transform: translateX(-50%);
   z-index: 99;
 
   &__mask {
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
-    opacity: 0.8;
+    left: 0;
     border-radius: 4px;
     background-color: $dark;
+    opacity: 0.8;
     z-index: -1;
   }
 
@@ -93,16 +93,16 @@ export default {
     }
 
     &__text {
-      text-align: center;
       margin-top: 8px;
-      font-size: 14px;
       font-weight: 200;
+      font-size: 14px;
+      text-align: center;
     }
   }
 
   .text-container {
-    text-align: center;
     padding: 14px 16px;
+    text-align: center;
   }
 
   &.bottom {

@@ -44,19 +44,19 @@ export default class Button extends Vue {
   background: $color;
 
   &.lm-btn-outline {
+    border: 1px solid $color;
     color: $color;
     background: $second_color;
-    border: 1px solid $color;
   }
 }
 
 .lm-btn {
   position: relative;
   padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 4px;
-  border: none;
 
   &-disabled {
     color: $gray-light;
@@ -86,14 +86,14 @@ export default class Button extends Vue {
   }
 
   &::before {
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
     background-color: $dark-light;
+    opacity: 0;
+    content: '';
   }
 
   &:active::before {
