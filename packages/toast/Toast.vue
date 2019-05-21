@@ -54,7 +54,7 @@ export default {
   bottom: 0;
   left: 0;
   background-color: $dark-light;
-  opacity: 0.3;
+  opacity: .3;
   z-index: 98;
 }
 
@@ -75,7 +75,7 @@ export default {
     left: 0;
     border-radius: 4px;
     background-color: $dark;
-    opacity: 0.8;
+    opacity: .8;
     z-index: -1;
   }
 
@@ -121,7 +121,7 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s;
+  transition: opacity .5s;
 }
 
 .fade-enter,

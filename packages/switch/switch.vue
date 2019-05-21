@@ -63,7 +63,7 @@ $switch-height: 30px;
       left: 0;
       border-radius: $switch-height;
       background: $white;
-      transition: transform 0.3s;
+      transition: transform .3s;
       content: '';
     }
 
@@ -75,7 +75,7 @@ $switch-height: 30px;
     &::after {
       width: $switch-height;
       height: $switch-height;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
     }
   }
 
@@ -110,7 +110,7 @@ $switch-height: 30px;
       + .lm-switch-core {
         border-color: $blue-light;
         background: $blue-light;
-        opacity: 0.3;
+        opacity: .3;
       }
     }
   }

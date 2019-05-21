@@ -17,12 +17,10 @@
     }
   },
   "lint-staged": {
-    "*.{vue,scss}": [
-      "stylelint --fix"
-    ],
-    "*.{vue,js,ts}": [
+    "*.{vue,js,ts,scss}": [
       "prettier --no-semi --print-width 120 --single-quote --trailing-comma all --jsx-bracket-same-line --write",
-      "git add ."
+      "stylelint \"*.scss .vue\" --fix",
+      "git add"
     ]
   },
   "dependencies": {
