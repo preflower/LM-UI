@@ -1,21 +1,19 @@
 <template>
-<div class="lm-loading">
-  <div class="lm-loading__ring lm-loading__blue"></div>
-  <div class="lm-loading__ring lm-loading__orange"></div>
-  <div class="lm-loading__ring lm-loading__red"></div>
-</div>
+  <div class="lm-loading">
+    <div class="lm-loading__ring lm-loading__blue"></div>
+    <div class="lm-loading__ring lm-loading__orange"></div>
+    <div class="lm-loading__ring lm-loading__red"></div>
+  </div>
 </template>
 
-<script lang='ts'>
-import { Component, Vue } from 'vue-property-decorator';
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
 
 @Component
-export default class Loading extends Vue {
-
-}
+export default class Loading extends Vue {}
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 @import 'common/style/variable.scss';
 
 .lm-loading {
@@ -51,7 +49,7 @@ export default class Loading extends Vue {
       z-index: 1;
     }
   }
-  
+
   &__blue {
     border-top-color: $blue-light;
     border-left-color: $blue-light;
