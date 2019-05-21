@@ -98,7 +98,7 @@
     ],
     "moduleNameMapper": {
       "^@/(.*)$": "<rootDir>/packages/$1",
-      "^common/(.*)$": "<rootDir>/common/$1"
+      "^@common/(.*)$": "<rootDir>/common/$1"
     },
     "transform": {
       ".*\\.(vue)$": "vue-jest",
