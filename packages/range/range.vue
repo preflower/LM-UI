@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { Component, Prop, Watch, Mixins, Emit } from 'vue-property-decorator'
-import TouchMixin from 'common/helpers/touch'
+import TouchMixin from '@common/helpers/touch'
 
 @Component
 export default class Range extends Mixins(TouchMixin) {
@@ -92,7 +92,7 @@ export default class Range extends Mixins(TouchMixin) {
     background: $gray content-box;
 
     &--disabled {
-      opacity: 0.3;
+      opacity: .3;
     }
   }
 
