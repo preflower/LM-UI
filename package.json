@@ -19,7 +19,7 @@
   "lint-staged": {
     "*.{vue,js,ts}": [
       "prettier --no-semi --print-width 120 --single-quote --trailing-comma all --jsx-bracket-same-line --write",
-      "git add"
+      "git add ."
     ],
     "*.{vue,scss}": [
       "stylelint --fix"
