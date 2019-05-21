@@ -23,10 +23,12 @@
       }
     ],
     "max-empty-lines": 2,
-    "rule-empty-line-before": [ "always", {
-      "except": [ "first-nested" ],
-      "ignore": [ "after-comment" ]
-    } ],
-    "unit-whitelist": ["px", "em", "rem", "%", "s"]
+    "rule-empty-line-before": [ 
+      "always", 
+      {
+        "except": [ "first-nested" ],
+        "ignore": [ "after-comment" ]
+      }
+    ],
   }
 }

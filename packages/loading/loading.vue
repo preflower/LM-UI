@@ -21,6 +21,7 @@ export default class Loading extends Vue {}
   display: inline-block;
   width: 38px;
   height: 38px;
+
   &__ring {
     position: absolute;
     border-radius: 50%;
@@ -33,6 +34,7 @@ export default class Loading extends Vue {}
       height: 32px;
       animation-delay: 600ms;
     }
+
     &:nth-child(2) {
       top: 5px;
       left: 5px;
@@ -41,6 +43,7 @@ export default class Loading extends Vue {}
       height: 22px;
       animation-delay: 200ms;
     }
+
     &:nth-child(3) {
       top: 10px;
       left: 10px;
@@ -54,10 +57,12 @@ export default class Loading extends Vue {}
     border-top-color: $blue-light;
     border-left-color: $blue-light;
   }
+
   &__red {
     border-top-color: $red-dark;
     border-left-color: $red-dark;
   }
+
   &__orange {
     border-top-color: $orange;
     border-left-color: $orange;
