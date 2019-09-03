@@ -1,23 +1,24 @@
 <template>
-  <transition name="fade">
-    <div v-show="value">
-      <div class="mask" @touchmove.prevent v-if="mask"></div>
-      <div class="toast-container" :class="[position]">
-        <div class="toast-container__mask"></div>
-        <div class="spinner-container" v-if="type === 'loading'">
-          <lm-loading></lm-loading>
-          <p class="spinner-container__text" v-if="message">{{ message }}</p>
-        </div>
-        <p class="text-container" v-else>{{ message }}</p>
+  <lm-popup :visible="value" @click-mask="value_change" :close-on-click-mask="false" :mask="mask" :position="position">
+    <div class="toast-container">
+      <div class="spinner-container" v-if="type === 'loading'">
+        <lm-loading></lm-loading>
+        <p class="spinner-container__text" v-if="message">{{ message }}</p>
       </div>
+      <p class="text-container" v-else>{{ message }}</p>
     </div>
-  </transition>
+  </lm-popup>
 </template>
 
 <script>
 import LmLoading from '@/loading/loading'
+import LmPopup from '@/popup/popup'
 
 export default {
+  model: {
+    event: 'change',
+    prop: 'value',
+  },
   props: {
     value: {
       type: Boolean,
@@ -37,8 +38,14 @@ export default {
       default: 'middle',
     },
   },
+  methods: {
+    value_change(val) {
+      this.$emit('change', val)
+    },
+  },
   components: {
     LmLoading,
+    LmPopup,
   },
 }
 </script>
@@ -47,37 +54,12 @@ export default {
 @import 'common/style/init.scss';
 @import 'common/style/variable.scss';
 
-.mask {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: $dark-light;
-  opacity: .3;
-  z-index: 98;
-}
-
 .toast-container {
-  position: fixed;
-  left: 50%;
+  border-radius: 4px;
   color: $white;
+  background: rgba(0, 0, 0, .7);
   font-weight: 100;
   font-size: 16px;
-  transform: translateX(-50%);
-  z-index: 99;
-
-  &__mask {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    border-radius: 4px;
-    background-color: $dark;
-    opacity: .8;
-    z-index: -1;
-  }
 
   .spinner-container {
     display: flex;
@@ -104,29 +86,6 @@ export default {
     padding: 14px 16px;
     text-align: center;
   }
-
-  &.bottom {
-    bottom: 50px;
-  }
-
-  &.middle {
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  &.top {
-    top: 50px;
-  }
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity .5s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
 }
 
 @keyframes loading {
