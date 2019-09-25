@@ -92,7 +92,7 @@ export default class Selector extends Mixins(TouchMixin) {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .list {
   list-style-type: none;
   padding: 0;

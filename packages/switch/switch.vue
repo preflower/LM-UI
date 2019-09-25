@@ -31,7 +31,7 @@ export default class Switch extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $switch-width: 50px;
 $switch-height: 30px;
 

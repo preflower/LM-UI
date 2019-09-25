@@ -13,7 +13,7 @@ import { Component, Vue } from 'vue-property-decorator'
 export default class Loading extends Vue {}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import 'common/style/variable.scss';
 
 .lm-loading {

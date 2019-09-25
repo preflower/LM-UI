@@ -77,7 +77,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .scrollbar {
   position: relative;
   overflow: hidden;

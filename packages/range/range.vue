@@ -79,7 +79,7 @@ export default class Range extends Mixins(TouchMixin) {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import 'common/style/variable.scss', 'common/style/init.scss';
 
 .range {

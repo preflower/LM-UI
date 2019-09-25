@@ -50,7 +50,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import 'common/style/init.scss';
 @import 'common/style/variable.scss';
 

@@ -36,7 +36,7 @@ export default class Button extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import 'common/style/init.scss', 'common/style/variable.scss';
 
 @mixin btn-color($color, $second_color: #ffffff) {
@@ -60,7 +60,7 @@ export default class Button extends Vue {
 
   &-disabled {
     color: $gray-light;
-    opacity: 0.6;
+    opacity: .6;
   }
 
   &-block {
@@ -97,7 +97,7 @@ export default class Button extends Vue {
   }
 
   &:active::before {
-    opacity: 0.2;
+    opacity: .2;
   }
 
   + .lm-btn {
