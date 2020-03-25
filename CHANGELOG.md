@@ -37,3 +37,9 @@
   - max => 设定范围最大值
   - step => 设定每次移动的最小步长
   - disabled => 是否禁用 Range
+
+### release/0.0.4
+2019-03-
+
+#### 优化
+- Popup 组件新增自增长`z-index` (@Lindberg)

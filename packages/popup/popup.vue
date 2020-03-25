@@ -1,8 +1,14 @@
 <template>
   <transition name="fade">
     <div class="popup" v-show="visible">
-      <div class="popup__mask" v-show="mask" @click="mask_click" @touchmove.prevent></div>
-      <div class="popup-container" :class="classes">
+      <div
+        class="popup__mask"
+        :style="{ 'z-index': zIndex }"
+        v-show="mask"
+        @click="mask_click"
+        @touchmove.prevent
+      ></div>
+      <div class="popup-container" :class="classes" :style="{ 'z-index': zIndex + 1 }">
         <slot></slot>
       </div>
     </div>
@@ -12,6 +18,10 @@
 <script lang="ts">
 import { Component, Vue, Prop, Model, Watch, Emit } from 'vue-property-decorator'
 
+if (!Vue.prototype.$zIndex) {
+  Vue.prototype.$zIndex = 90
+}
+
 @Component
 export default class Popup extends Vue {
   @Prop({ default: 'middle', type: String }) position!: string
@@ -19,6 +29,10 @@ export default class Popup extends Vue {
   @Prop({ default: true, type: Boolean }) closeOnClickMask!: boolean
   @Prop({ default: false, type: Boolean }) full!: boolean
   @Prop({ default: false, type: Boolean }) visible!: boolean
+
+  get zIndex(): Number {
+    return Vue.prototype.$zIndex++
+  }
 
   get classes(): Array<any> {
     return [
@@ -55,7 +69,7 @@ export default class Popup extends Vue {
 .popup {
   &-container {
     position: fixed;
-    z-index: 99; // todo: 层级逐渐提升，考虑多组件问题
+
     &-top {
       top: 0;
       left: 50%;
@@ -100,7 +114,6 @@ export default class Popup extends Vue {
     bottom: 0;
     left: 0;
     background-color: rgba(0, 0, 0, .5);
-    z-index: 98;
   }
 }
 

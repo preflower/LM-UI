@@ -52,7 +52,7 @@ export default class App extends Vue {
   }
 
   handle_click(event: Event) {
-    this.$toast({ message: 'Test', duration: 0 })
+    this.$toast({ message: 'Test', duration: 0, create: true })
   }
 
   create_new_toast(event: Event) {
