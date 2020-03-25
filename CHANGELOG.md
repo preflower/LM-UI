@@ -43,3 +43,4 @@
 
 #### 优化
 - Popup 组件新增自增长`z-index` (@Lindberg)
+- 新增 Scrollbar 组件 (@Lindebrg)
